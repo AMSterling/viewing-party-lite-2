@@ -10,7 +10,7 @@ RSpec.describe 'Create Viewing Party' do
   it 'links from user movie show page', :vcr do
     visit user_movie_path(user1, 238)
 
-    click_on ('Create Viewing Party for The Godfather')
+    click_on 'Create Viewing Party for The Godfather'
 
     expect(current_path).to eq(user_movie_viewing_party_new_path(user1, 238))
   end
@@ -37,7 +37,7 @@ RSpec.describe 'Create Viewing Party' do
       expect(page).to have_field(:date)
       expect(page).to have_field(:start_time)
 
-      within("#invite_others") do
+      within('#invite_others') do
         expect(page).to have_field("attendees_#{user2.id}", unchecked: true)
         expect(page).to have_field("attendees_#{user3.id}", unchecked: true)
         expect(page).to have_field("attendees_#{user4.id}", unchecked: true)
@@ -47,12 +47,12 @@ RSpec.describe 'Create Viewing Party' do
 
     it 'redirects to dashboard if successfully created' do
       fill_in 'Day', with: Date.tomorrow
-      fill_in 'Start Time', with: Time.now + 600
+      fill_in 'Start Time', with: Time.zone.now + 600
 
       check("attendees_#{user2.id}")
       check("attendees_#{user3.id}")
 
-      within("#invite_others") do
+      within('#invite_others') do
         expect(page).to have_field("attendees_#{user2.id}", checked: true)
         expect(page).to have_field("attendees_#{user3.id}", checked: true)
         expect(page).to have_field("attendees_#{user4.id}", unchecked: true)

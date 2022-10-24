@@ -25,7 +25,7 @@ RSpec.describe 'Movie Index Page' do
 
         click_on 'Find Top Rated Movies'
 
-        expect(page).to have_link("The Godfather")
+        expect(page).to have_link('The Godfather')
       end
     end
 
@@ -35,7 +35,7 @@ RSpec.describe 'Movie Index Page' do
         fill_in :q, with: 'wayne'
         click_on 'Find Movies'
 
-        expect(page).to have_content("Wayne")
+        expect(page).to have_content('Wayne')
       end
     end
 

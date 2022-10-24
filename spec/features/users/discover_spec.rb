@@ -1,4 +1,4 @@
-require 'rails_helper' 
+require 'rails_helper'
 
 RSpec.describe 'Discover Movies page' do
   let!(:users) { create_list(:user, 3) }
@@ -15,7 +15,7 @@ RSpec.describe 'Discover Movies page' do
   it 'link directs to the discover page' do
     visit user_discover_path(user1)
 
-    expect(page).to have_content("Discover Movies")
+    expect(page).to have_content('Discover Movies')
   end
 
   it 'has button for top rated movies' do

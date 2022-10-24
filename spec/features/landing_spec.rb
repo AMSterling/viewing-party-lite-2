@@ -9,7 +9,6 @@ RSpec.describe 'Landing Page' do
       visit root_path
     end
 
-
     it 'should be on the landing page with title' do
       expect(page).to have_content('Viewing Party')
     end
@@ -25,7 +24,7 @@ RSpec.describe 'Landing Page' do
     it 'has section for existing users' do
       expect(page).to have_content('Existing Users')
 
-      within("#existing_users") do
+      within('#existing_users') do
         within("#user-#{user1.id}") do
           expect(page).to have_link("#{user1.email}'s Dashboard")
         end

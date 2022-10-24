@@ -5,7 +5,7 @@ RSpec.describe 'the user dashboard' do
   let!(:user1) { users.first }
   let!(:user2) { users.second }
   let!(:user3) { users.third }
-  let!(:user4) { users.last }
+  let!(:user4) { users.fourth }
 
   it 'links to the user dashboard' do
     visit root_path
@@ -37,7 +37,7 @@ RSpec.describe 'the user dashboard' do
     visit user_movie_viewing_party_new_path(user1, 238)
 
     fill_in 'Day', with: Date.tomorrow
-    fill_in 'Start Time', with: Time.now + 600
+    fill_in 'Start Time', with: Time.zone.now + 600
 
     check("attendees_#{user2.id}")
     check("attendees_#{user3.id}")
@@ -45,7 +45,7 @@ RSpec.describe 'the user dashboard' do
     click_button 'Create Party'
 
     expect(page).to have_link('The Godfather')
-    expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y') )
+    expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
     expect(page).to have_content('Hosting')
     expect(page).to have_content("Hosted By: #{user1.name}")
     expect(page).to have_content("Attendees: #{user2.name} and #{user3.name}")
@@ -54,13 +54,13 @@ RSpec.describe 'the user dashboard' do
     visit user_dashboard_path(user2)
 
     expect(page).to have_link('The Godfather')
-    expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y') )
+    expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
     expect(page).to have_content('Invited')
 
-    visit user_movie_viewing_party_new_path(user2, 553512)
+    visit user_movie_viewing_party_new_path(user2, 553_512)
 
     fill_in 'Day', with: Date.tomorrow
-    fill_in 'Start Time', with: Time.now + 600
+    fill_in 'Start Time', with: Time.zone.now + 600
 
     check("attendees_#{user1.id}")
     check("attendees_#{user3.id}")
@@ -68,7 +68,7 @@ RSpec.describe 'the user dashboard' do
     click_button 'Create Party'
 
     expect(page).to have_link('Burn the Stage: The Movie')
-    expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y') )
+    expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
     expect('Burn the Stage: The Movie').to appear_before('The Godfather')
     expect(page).to have_content("Hosted By: #{user2.name}")
     expect(page).to have_content("Attendees: #{user1.name} and #{user3.name}")

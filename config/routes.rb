@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     get '/dashboard', to: 'dashboard#show', as: :dashboard
     get '/discover', to: 'discover#index', as: :discover
-    resources :movies, only: [:index, :show] do
+    resources :movies, only: %i[index show] do
       get '/viewing-party/new', to: 'viewing_party#new'
       post '/viewing-party', to: 'viewing_party#create'
     end
