@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def login_user
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by_email(params[:email])
       if @user&.authenticate(params[:password])
         flash[:success] = "Welcome #{@user.name}"
         redirect_to user_dashboard_path(@user)
