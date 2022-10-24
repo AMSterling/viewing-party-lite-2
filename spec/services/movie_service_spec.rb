@@ -10,7 +10,7 @@ RSpec.describe MovieService do
 
       movies.each do |movie|
         expect(movie).to have_key(:id)
-        expect(movie[:id]). to be_an Integer
+        expect(movie[:id]).to be_an Integer
         expect(movie).to have_key(:title)
         expect(movie[:title]).to be_a String
         expect(movie).to have_key(:vote_average)
@@ -28,7 +28,7 @@ RSpec.describe MovieService do
 
       movies.each do |movie|
         expect(movie).to have_key(:id)
-        expect(movie[:id]). to be_an Integer
+        expect(movie[:id]).to be_an Integer
         expect(movie).to have_key(:title)
         expect(movie[:title].downcase).to include('wayne')
       end

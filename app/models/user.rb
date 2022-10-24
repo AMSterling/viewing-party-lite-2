@@ -1,10 +1,10 @@
 class User < ApplicationRecord
-  validates_presence_of :name
-  validates_presence_of :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Must be valid email address' }
-  validates_uniqueness_of :email, case_sensitive: false
+  validates :name, :password_digest, presence: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Must be valid email address' }
   has_secure_password
 
-  has_many :user_viewing_parties
+  has_many :user_viewing_parties, dependent: :destroy
   has_many :viewing_parties, through: :user_viewing_parties
 
   before_save :downcase_email

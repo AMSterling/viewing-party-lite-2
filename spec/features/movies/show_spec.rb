@@ -26,7 +26,7 @@ RSpec.describe 'Movie Show Page' do
   it 'displays header info', :vcr do
     visit user_movie_path(user1, 238)
 
-    within("#header_info") do
+    within('#header_info') do
       expect(page).to have_content('Vote Average: 8.7')
       expect(page).to have_content('Runtime: 2 hr 55 min')
       expect(page).to have_content('Genre(s): Drama and Crime')
@@ -36,7 +36,7 @@ RSpec.describe 'Movie Show Page' do
   it 'displays a summary', :vcr do
     visit user_movie_path(user1, 238)
 
-    within("#summary") do
+    within('#summary') do
       expect(page).to have_content('When organized crime family patriarch')
     end
   end
@@ -44,7 +44,7 @@ RSpec.describe 'Movie Show Page' do
   it 'displays the cast', :vcr do
     visit user_movie_path(user1, 238)
 
-    within("#cast") do
+    within('#cast') do
       expect(page).to have_content('Marlon Brando as Don Vito Corleone')
       expect(page).to have_content("Al Lettieri as Virgil 'The Turk' Sollozzo")
     end
@@ -53,7 +53,7 @@ RSpec.describe 'Movie Show Page' do
   it 'displays reviews', :vcr do
     visit user_movie_path(user1, 238)
 
-    within("#reviews") do
+    within('#reviews') do
       expect(page).to have_content('2 Review(s)')
       expect(page).to have_content('Author: ')
     end
@@ -68,7 +68,7 @@ RSpec.describe 'Movie Show Page' do
   it 'viewing party button routes to new viewing party page', :vcr do
     visit user_movie_path(user1, 238)
 
-    click_on ('Create Viewing Party for The Godfather')
+    click_on 'Create Viewing Party for The Godfather'
 
     expect(current_path).to eq(user_movie_viewing_party_new_path(user1, 238))
   end

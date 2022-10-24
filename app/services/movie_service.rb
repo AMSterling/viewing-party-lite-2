@@ -6,20 +6,20 @@ class MovieService
   end
 
   def self.top_forty
-    response_1 = conn.get('movie/top_rated?&page=1')
-    response_2 = conn.get('movie/top_rated?&page=2')
-    combined_response(response_1, response_2)
+    response1 = conn.get('movie/top_rated?&page=1')
+    response2 = conn.get('movie/top_rated?&page=2')
+    combined_response(response1, response2)
   end
 
   def self.movie_search(keyword_string)
-    response_1 = conn.get("search/movie?query=#{keyword_string}&page=1")
-    response_2 = conn.get("search/movie?query=#{keyword_string}&page=2")
-    combined_response(response_1, response_2)
+    response1 = conn.get("search/movie?query=#{keyword_string}&page=1")
+    response2 = conn.get("search/movie?query=#{keyword_string}&page=2")
+    combined_response(response1, response2)
   end
 
-  def self.combined_response(response_1, response_2)
-    page1 = JSON.parse(response_1.body, symbolize_names: true)[:results]
-    page2 = JSON.parse(response_2.body, symbolize_names: true)[:results]
+  def self.combined_response(response1, response2)
+    page1 = JSON.parse(response1.body, symbolize_names: true)[:results]
+    page2 = JSON.parse(response2.body, symbolize_names: true)[:results]
     page1 + page2
   end
 
