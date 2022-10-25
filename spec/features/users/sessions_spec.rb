@@ -36,5 +36,35 @@ RSpec.describe 'user login' do
     expect(page).to have_content('Invalid Credentials')
     expect(page).to have_button('Log In')
     expect(page).to have_button('Create New User')
+
+    fill_in :email, with: "#{user1.name}"
+    fill_in :password, with: "#{user1.password}"
+    click_button 'Log In'
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('Invalid Credentials')
+    expect(page).to have_button('Log In')
+    expect(page).to have_button('Create New User')
+  end
+
+  it 'does not log a user in if any field is left blank' do
+
+    fill_in :email, with: "#{user1.email}"
+    fill_in :password, with: ''
+    click_button 'Log In'
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('Invalid Credentials')
+    expect(page).to have_button('Log In')
+    expect(page).to have_button('Create New User')
+
+    fill_in :email, with: ''
+    fill_in :password, with: "#{user1.password}"
+    click_button 'Log In'
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('Invalid Credentials')
+    expect(page).to have_button('Log In')
+    expect(page).to have_button('Create New User')
   end
 end
