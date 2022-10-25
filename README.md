@@ -23,6 +23,8 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield2]][linkedin-url2]
 
 
 
@@ -36,7 +38,7 @@
 <h3 align="center">Viewing Party Lite 2</h3>
 
   <p align="center">
-    Viewing Part Lite is an application in which users can explore movie options and create 
+    Viewing Party Lite is an application in which users can explore movie options and create 
     a viewing party event for themselves and other users of the application.
     <br />
     <a href="https://github.com/AMSterling/viewing-party-lite-2"><strong>Explore the docs »</strong></a>
@@ -94,6 +96,7 @@
 * [![Ruby][Ruby]][Ruby-url]
 * [![RSpec][RSpec]][RSpec-url]
 * [![Atom][Atom]][Atom-url]
+* [![Visual Studio Code][Visual Studio Code]][Visual Studio Code-url]
 * [![CSS][CSS]][CSS-url]
 * [![HTML5][HTML5]][HTML5-url]
 * [![JavaScript][JavaScript]][JavaScript-url]
@@ -213,10 +216,15 @@ Don't forget to give the project a star! Thanks again!
 [license-url]: https://github.com/AMSterling/viewing-party-lite-2/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/sterling-316a6223a/
+[linkedin-shield2]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url2]: https://linkedin.com/in/benjamin-randolph-43881a95/
 [product-screenshot]: images/screenshot.png
 
 [Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
 [Atom-url]: https://atom.io/
+
+[Visual Studio Code]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
+[Visual Studio Code-url]: https://code.visualstudio.com/
 
 [Rails]: https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white
 [Rails-url]: https://rubyonrails.org/
