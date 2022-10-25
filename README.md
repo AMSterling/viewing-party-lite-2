@@ -164,7 +164,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/AMSterling/viewing-party-lite-2/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -204,7 +204,7 @@ Don't forget to give the project a star! Thanks again!
 [contributors-shield]: https://img.shields.io/github/contributors/AMSterling/viewing-party-lite-2.svg?style=for-the-badge
 [contributors-url]: https://github.com/AMSterling/viewing-party-lite-2/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/AMSterling/viewing-party-lite-2.svg?style=for-the-badge
-[forks-url]: https://github.com/AMSterling/repo_name/network/members
+[forks-url]: https://github.com/AMSterling/viewing-party-lite-2/network/members
 [stars-shield]: https://img.shields.io/github/stars/AMSterling/viewing-party-lite-2.svg?style=for-the-badge
 [stars-url]: https://github.com/AMSterling/viewing-party-lite-2/stargazers
 [issues-shield]: https://img.shields.io/github/issues/AMSterling/viewing-party-lite-2.svg?style=for-the-badge
