@@ -30,10 +30,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/AMSterling/viewing-party-lite-2">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Viewing Party Lite Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Viewing Party Lite</h3>
+<h3 align="center">Viewing Party Lite 2</h3>
 
   <p align="center">
     Viewing Part Lite is an application in which users can explore movie options and create 
@@ -81,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Viewing Party Lite 2 Screen Shot][product-screenshot]](https://example.com)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -108,7 +108,11 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Follow installation instructions below. Push to your preferred production server or run rails s in your terminal and open [http://localhost:3000](http://localhost:3000) in your browser.
+Follow installation instructions below. Push to your preferred production server or in your terminal run 
+  ```sh
+  rails server
+  ```
+  Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Prerequisites
 
