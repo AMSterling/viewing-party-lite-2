@@ -46,6 +46,13 @@ table {
   text-align: center
 }
 
+#login-form {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  width: 100%
+}
+
 #existing_users {
   margin: auto;
   text-align: center;

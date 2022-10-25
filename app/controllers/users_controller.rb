@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all
+  end
+
   def new
   end
 
@@ -12,6 +16,17 @@ class UsersController < ApplicationController
       redirect_to register_path
       flash[:alert] = user.errors.full_messages.to_sentence
     end
+  end
+
+  def login_user
+    @user = User.find_by_email(params[:email])
+      if @user&.authenticate(params[:password])
+        flash[:success] = "Welcome #{@user.name}"
+        redirect_to user_dashboard_path(@user)
+      else
+        redirect_to root_path
+        flash[:error] = 'Invalid Credentials'
+      end
   end
 
   private
