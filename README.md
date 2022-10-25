@@ -33,10 +33,11 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Viewing Party Lite</h3>
 
   <p align="center">
-    project_description
+    Viewing Part Lite is an application in which users can explore movie options and create 
+    a viewing party event for themselves and other users of the application.
     <br />
     <a href="https://github.com/AMSterling/viewing-party-lite-2"><strong>Explore the docs »</strong></a>
     <br />
