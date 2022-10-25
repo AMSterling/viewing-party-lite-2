@@ -6,8 +6,11 @@ RSpec.describe 'user login' do
   let!(:user2) { users.second }
   let!(:user3) { users.third }
 
-  it 'logs a user in' do
+  before :each do
     visit root_path
+  end
+
+  it 'logs a user in' do
 
     expect(page).to have_field(:email)
     expect(page).to have_field(:password)
@@ -24,7 +27,6 @@ RSpec.describe 'user login' do
   end
 
   it 'does not log a user in with invalid credentials' do
-    visit root_path
 
     fill_in :email, with: "#{user1.email}"
     fill_in :password, with: 'wrong'
