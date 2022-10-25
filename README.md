@@ -23,7 +23,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 [![LinkedIn][linkedin-shield2]][linkedin-url2]
 
 
