@@ -30,15 +30,15 @@ RSpec.describe 'Landing Page' do
 
       within('#existing_users') do
         within("#user-#{user1.id}") do
-          expect(page).to have_content("#{user1.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**")}")
+          expect(page).to have_content("#{user1.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, '**')}")
         end
 
         within("#user-#{user2.id}") do
-          expect(page).to have_content("#{user2.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**")}")
+          expect(page).to have_content("#{user2.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, '**')}")
         end
 
         within("#user-#{user3.id}") do
-          expect(page).to have_content("#{user3.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**")}")
+          expect(page).to have_content("#{user3.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, '**')}")
         end
       end
     end

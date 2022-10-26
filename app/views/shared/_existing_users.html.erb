@@ -17,7 +17,7 @@
   <div id='user-info'>
     <% @users.each do |user| %>
       <div id="user-<%= user.id %>">
-        <p><%= user.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**") %></p>
+        <p><%= user.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, '**') %></p>
       </div>
     <% end %>
   </div>

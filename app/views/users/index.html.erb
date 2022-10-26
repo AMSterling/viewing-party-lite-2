@@ -1,4 +1,4 @@
-<% if !current_user %>
+<% unless current_user %>
 
   <div id='login'>
     <%= render partial: 'login_form', locals: { path: login_path } %>
