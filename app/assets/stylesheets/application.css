@@ -13,11 +13,6 @@
  *= require_tree .
  *= require_self
  */
-nav {
- padding: 8px;
- font-size: 18px
-}
-
 header {
   margin: auto;
   padding: 20px
@@ -92,7 +87,13 @@ table {
 }
 
 #vp-column {
-  padding:5px;
+  padding: 5px;
   text-align: center;
   align: center
+}
+
+#messages {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 22px;
 }
