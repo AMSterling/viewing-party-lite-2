@@ -3,7 +3,7 @@
 <br>
 
 <div id='button'>
-  <%= button_to "Discover Page", discover_path, method: :get %>
+  <%= button_to 'Discover Page', discover_path, method: :get %>
 </div>
 
 <br>
@@ -25,7 +25,7 @@
       <br>
       <br>
 
-      <%= f.label :duration, "Duration of Party" %>
+      <%= f.label :duration, 'Duration of Party' %>
       <%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime, required: true %>
 
       <br>
@@ -49,7 +49,7 @@
       <br>
       <br>
 
-    <section id="invite_others">
+    <section id='invite_others'>
       <%= f.collection_check_boxes(:attendees, @invitees, :id, :name_and_email, include_hidden: false) do |attendee| %>
         <div id='check_boxes'>
           <%= attendee.check_box %>
