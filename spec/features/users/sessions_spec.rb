@@ -107,4 +107,16 @@ RSpec.describe 'user login' do
     expect(page).to have_button('Log In')
     expect(page).to have_button('Create New User')
   end
+
+  it 'cannot visit pages other than home and register if not logged in' do
+    visit dashboard_path
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('You must be logged in')
+
+    visit movie_viewing_party_new_path(238)
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('You must be logged in')
+  end
 end
