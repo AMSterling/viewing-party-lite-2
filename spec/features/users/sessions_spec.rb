@@ -10,7 +10,7 @@ RSpec.describe 'user login' do
     visit root_path
   end
 
-  it 'logs a user in' do
+  it 'logs a user in and log out' do
 
     expect(page).to have_field(:email)
     expect(page).to have_field(:password)
@@ -20,10 +20,50 @@ RSpec.describe 'user login' do
     fill_in :password, with: "#{user1.password}"
     click_button 'Log In'
 
-    expect(current_path).to eq(user_dashboard_path(user1))
+    expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("Welcome #{user1.name}")
     expect(page).to_not have_button('Log In')
     expect(page).to_not have_button('Create New User')
+    expect(page).to have_link('Log Out')
+
+    click_link 'Home'
+
+    expect(current_path).to eq(root_path)
+
+    within "#user-#{user1.id}" do
+      expect(page).to have_link("#{user1.email}'s Dashboard")
+    end
+    within "#user-#{user2.id}" do
+      expect(page).to_not have_link("#{user2.email}'s Dashboard")
+      expect(page).to have_content("#{user2.email}")
+    end
+    within "#user-#{user3.id}" do
+      expect(page).to_not have_link("#{user3.email}'s Dashboard")
+      expect(page).to have_content("#{user3.email}")
+    end
+
+    click_link 'Log Out'
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_button('Log In')
+    expect(page).to have_button('Create New User')
+    expect(page).to_not have_link('Log Out')
+    expect(page).to have_content('Existing Users')
+
+    within "#user-#{user1.id}" do
+      expect(page).to_not have_link("#{user1.email}'s Dashboard")
+      expect(page).to have_content("#{user1.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**")}")
+    end
+
+    within "#user-#{user2.id}" do
+      expect(page).to_not have_link("#{user2.email}'s Dashboard")
+      expect(page).to have_content("#{user2.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**")}")
+    end
+
+    within "#user-#{user3.id}" do
+      expect(page).to_not have_link("#{user3.email}'s Dashboard")
+      expect(page).to have_content("#{user3.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**")}")
+    end
   end
 
   it 'does not log a user in with invalid credentials' do

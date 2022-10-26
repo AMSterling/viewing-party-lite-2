@@ -1,8 +1,10 @@
 class ViewingPartyController < ApplicationController
+  before_action :require_user
+
   def new
-    @host = User.find(params[:user_id])
+    @host = current_user
     @movie = MovieFacade.details(params[:movie_id])
-    @invitees = User.where.not(id: params[:user_id])
+    @invitees = User.where.not(id: current_user.id)
   end
 
   def create
@@ -16,12 +18,12 @@ class ViewingPartyController < ApplicationController
       start_time: Time.zone.parse(params[:start_time])
     )
 
-    UserViewingParty.create!(user_id: params[:user_id].to_i, viewing_party_id: viewing_party.id)
+    UserViewingParty.create!(user_id: current_user.id, viewing_party_id: viewing_party.id)
       if params[:attendees]
         params[:attendees].each do |attendee|
           UserViewingParty.create!(user_id: attendee.to_i, viewing_party_id: viewing_party.id)
         end
       end
-    redirect_to user_dashboard_path(User.find(params[:user_id]))
+    redirect_to dashboard_path
   end
 end

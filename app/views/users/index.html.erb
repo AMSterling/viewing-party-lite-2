@@ -12,11 +12,8 @@
 
 <section id='existing_users'>
   <h2>Existing Users</h2>
-  <% @users.each do |user| %>
-    <div id='user-<%= user.id %>'>
-      <p>
-        <%= link_to "#{user.email}'s Dashboard", user_dashboard_path(user) %>
-      </p>
-    </div>
-  <% end %>
+
+  <br>
+
+  <%= render partial: "shared/existing_users", locals: {users: @users} %>
 </section>

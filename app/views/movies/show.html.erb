@@ -1,7 +1,7 @@
 <h1><%= @movie.title %></h1>
 <center>
-  <p><%= button_to 'Discover Page', user_discover_path(@user), method: :get %></p>
-  <p><%= button_to "Create Viewing Party for #{@movie.title}", user_movie_viewing_party_new_path(@user, @movie.movie_id), method: :get %></p>
+  <p><%= button_to 'Discover Page', discover_path, method: :get %></p>
+  <p><%= button_to "Create Viewing Party for #{@movie.title}", movie_viewing_party_new_path(@movie.movie_id), method: :get %></p>
 </center>
 <br>
 
