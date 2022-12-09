@@ -49,7 +49,7 @@ RSpec.describe 'the user dashboard' do
     click_button 'Create Party'
 
     expect(page).to have_link('The Godfather')
-    expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
+    expect(page).to have_content(Date.tomorrow.strftime('%B%e, %Y'))
     expect(page).to have_content('Hosting')
     expect(page).to have_content("Hosted By: #{user1.name}")
     expect(page).to have_content("Attendees: #{user2.name} and #{user3.name}")
@@ -59,7 +59,7 @@ RSpec.describe 'the user dashboard' do
     visit dashboard_path
 
     expect(page).to have_link('The Godfather')
-    expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
+    expect(page).to have_content(Date.tomorrow.strftime('%B%e, %Y'))
     expect(page).to have_content('Invited')
 
     visit movie_viewing_party_new_path(553_512)
@@ -73,7 +73,7 @@ RSpec.describe 'the user dashboard' do
     click_button 'Create Party'
 
     expect(page).to have_link('Burn the Stage: The Movie')
-    expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
+    expect(page).to have_content(Date.tomorrow.strftime('%B%e, %Y'))
     expect('Burn the Stage: The Movie').to appear_before('The Godfather')
     expect(page).to have_content("Hosted By: #{user2.name}")
     expect(page).to have_content("Attendees: #{user1.name} and #{user3.name}")

@@ -118,19 +118,19 @@ RSpec.describe 'user login' do
 
     expect(page).to have_button('Find Movies')
 
-    fill_in :q, with: 'The Godfather'
+    fill_in :q, with: 'The Shawshank Redemption'
 
     click_on 'Find Movies'
 
     expect(current_path).to eq(movies_path)
 
-    click_link 'The Godfather'
+    click_link 'The Shawshank Redemption'
 
-    expect(page).to have_content('The Godfather')
+    expect(page).to have_content('The Shawshank Redemption')
     expect(page).to have_content('Vote Average:')
     expect(page).to have_content('Runtime:')
 
-    click_on 'Create Viewing Party for The Godfather'
+    click_on 'Create Viewing Party for The Shawshank Redemption'
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content('You must be logged in')
