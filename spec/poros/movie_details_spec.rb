@@ -12,6 +12,6 @@ RSpec.describe MovieDetails do
     expect(movie.summary).to include(' murder of his wife and her lover,')
     expect(movie.reviews.count).to eq 7
     expect(movie.cast.count).to eq 10
-    expect(movie.poster_path).to eq('/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg')
+    expect(movie.poster_path).to eq('/hBcY0fE9pfXzvVaY4GKarweriG2.jpg')
   end
 end
